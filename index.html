@@ -131,7 +131,7 @@
 
   .prompt{
     font-family: var(--font-mono); font-size: 13.5px; color: var(--muted);
-    display:flex; gap:8px; align-items:baseline; margin-bottom: 26px; flex-wrap: wrap;
+    display:flex; gap:8px; align-items:baseline; margin-bottom: 26px; flex-wrap: nowrap; white-space: nowrap; overflow: hidden;
   }
   .prompt .who{ color: var(--accent); }
   .prompt .cmd{ color: var(--fg); }
@@ -640,7 +640,7 @@
       var caret = document.getElementById('caret');
       if(!typed) return;
       var lines = ['whoami', 'cat ./focus.txt', 'systemctl status jarvis'];
-      var outs  = ['ai_iot_engineer · navy_veteran', 'agents · local-first · iot · edge-ml', '● active (running) — all systems go'];
+      var outs  = ['ai_iot_engineer · navy_veteran', 'agents · local-first · iot · edge-ml', '● active (running)'];
       if(prefersReduced){ typed.textContent = lines[0]; return; }
       var li = 0;
       function typeLine(){
